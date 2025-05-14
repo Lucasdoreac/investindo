@@ -82,5 +82,6 @@
     "jest-transform-stub": "^2.0.0",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "author": "Lucas Dórea Cardoso <ludoc.dev@gmail.com>"
 }
