@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
   Text, 
@@ -6,10 +6,12 @@ import {
   ScrollView, 
   TouchableOpacity,
   Modal,
-  SafeAreaView
+  SafeAreaView,
+  ActivityIndicator
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import EbookContent from '../../components/EbookContent';
+import EnhancedEbookContent from '../../components/EnhancedEbookContent';
 
 /**
  * Interface para representar um capítulo do eBook
@@ -19,7 +21,9 @@ interface Capitulo {
   titulo: string;
   descricao: string;
   conteudo: string;
+  conteudoLatex?: any; // Conteúdo estruturado convertido do LaTeX
   icone: keyof typeof FontAwesome.glyphMap;
+  temConteudoLatex?: boolean; // Flag para indicar se tem conteúdo LaTeX disponível
 }
 
 /**
@@ -29,6 +33,42 @@ interface Capitulo {
 export default function BibliotecaScreen() {
   // Estado para armazenar o capítulo selecionado
   const [capituloSelecionado, setCapituloSelecionado] = useState<Capitulo | null>(null);
+  const [carregandoLatex, setCarregandoLatex] = useState(false);
+  const [erroLatex, setErroLatex] = useState<string | null>(null);
+  
+  // Tenta carregar o conteúdo LaTeX convertido para o capítulo selecionado
+  useEffect(() => {
+    if (capituloSelecionado && !capituloSelecionado.conteudoLatex && capituloSelecionado.temConteudoLatex) {
+      carregarConteudoLatex(capituloSelecionado.id);
+    }
+  }, [capituloSelecionado]);
+  
+  // Função para carregar o conteúdo LaTeX convertido
+  const carregarConteudoLatex = async (id: string) => {
+    setCarregandoLatex(true);
+    setErroLatex(null);
+    
+    try {
+      // Tenta carregar o arquivo JSON correspondente ao capítulo
+      const conteudoLatex = require(`../../assets/content/capitulo${id}.json`);
+      
+      // Atualiza o capítulo selecionado com o conteúdo LaTeX
+      setCapituloSelecionado(prev => {
+        if (prev) {
+          return {
+            ...prev,
+            conteudoLatex
+          };
+        }
+        return prev;
+      });
+    } catch (error) {
+      console.error(`Erro ao carregar conteúdo LaTeX para capítulo ${id}:`, error);
+      setErroLatex(`Não foi possível carregar o formato aprimorado para este capítulo.`);
+    } finally {
+      setCarregandoLatex(false);
+    }
+  };
   
   // Capítulos do eBook
   const capitulos: Capitulo[] = [
@@ -36,6 +76,7 @@ export default function BibliotecaScreen() {
       id: '1',
       titulo: 'A Importância de Investir aos Poucos',
       descricao: 'Por que começar pequeno é uma estratégia poderosa e como construir o hábito de investir',
+      temConteudoLatex: true, // Este capítulo tem conteúdo LaTeX disponível
       conteudo: `# A IMPORTÂNCIA DE INVESTIR AOS POUCOS
 
 ## Por que começar pequeno é uma estratégia poderosa
@@ -468,11 +509,60 @@ Boa sorte em sua jornada financeira!`,
                   <FontAwesome name="arrow-left" size={24} color="#333" />
                 </TouchableOpacity>
                 <Text style={styles.modalTitle}>{capituloSelecionado.titulo}</Text>
+                
+                {capituloSelecionado.temConteudoLatex && (
+                  <TouchableOpacity 
+                    style={styles.viewToggleButton}
+                    onPress={() => {
+                      if (capituloSelecionado.conteudoLatex) {
+                        // Remover conteúdo LaTeX para voltar à visualização padrão
+                        setCapituloSelecionado(prev => {
+                          if (prev) {
+                            const { conteudoLatex, ...rest } = prev;
+                            return rest;
+                          }
+                          return prev;
+                        });
+                      } else {
+                        // Carregar conteúdo LaTeX para visualização avançada
+                        carregarConteudoLatex(capituloSelecionado.id);
+                      }
+                    }}
+                  >
+                    <FontAwesome 
+                      name={capituloSelecionado.conteudoLatex ? "file-text-o" : "file-code-o"} 
+                      size={20} 
+                      color="#333" 
+                    />
+                    <Text style={styles.viewToggleText}>
+                      {capituloSelecionado.conteudoLatex ? "Visualização Padrão" : "Visualização Avançada"}
+                    </Text>
+                  </TouchableOpacity>
+                )}
               </View>
               
               <ScrollView style={styles.modalContent}>
-                {/* Utilizando o componente EbookContent para renderizar o markdown formatado */}
-                <EbookContent content={capituloSelecionado.conteudo} style={styles.contentContainer} />
+                {carregandoLatex ? (
+                  <View style={styles.loadingContainer}>
+                    <ActivityIndicator size="large" color="#2E7D32" />
+                    <Text style={styles.loadingText}>Carregando conteúdo aprimorado...</Text>
+                  </View>
+                ) : erroLatex ? (
+                  <View style={styles.errorContainer}>
+                    <FontAwesome name="exclamation-circle" size={24} color="#C62828" />
+                    <Text style={styles.errorText}>{erroLatex}</Text>
+                    <EbookContent content={capituloSelecionado.conteudo} style={styles.contentContainer} />
+                  </View>
+                ) : capituloSelecionado.conteudoLatex ? (
+                  // Usar o componente aprimorado quando o conteúdo LaTeX estiver disponível
+                  <EnhancedEbookContent 
+                    content={capituloSelecionado.conteudoLatex} 
+                    style={styles.contentContainer} 
+                  />
+                ) : (
+                  // Cair para o componente markdown padrão
+                  <EbookContent content={capituloSelecionado.conteudo} style={styles.contentContainer} />
+                )}
               </ScrollView>
             </>
           )}
@@ -613,6 +703,19 @@ const styles = StyleSheet.create({
     color: 'white',
     flex: 1,
   },
+  viewToggleButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  viewToggleText: {
+    fontSize: 12,
+    marginLeft: 5,
+    color: '#333',
+  },
   modalContent: {
     flex: 1,
     padding: 15,
@@ -621,5 +724,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: '#333',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  loadingText: {
+    marginTop: 10,
+    fontSize: 16,
+    color: '#2E7D32',
+  },
+  errorContainer: {
+    padding: 15,
+    marginBottom: 20,
+  },
+  errorText: {
+    fontSize: 16,
+    color: '#C62828',
+    marginTop: 8,
+    marginBottom: 15,
   },
 });

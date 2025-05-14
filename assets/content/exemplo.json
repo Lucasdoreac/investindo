@@ -1,0 +1,426 @@
+[
+  {
+    "type": "text",
+    "content": "% Documento baseado nas normas ABNT usando abnTeX2",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\documentclass[",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "12pt,",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "a4paper,",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "openright,",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "oneside,",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "chapter=TITLE,",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "section=TITLE",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "]{abntex2}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "% Pacotes fundamentais",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage[utf8]{inputenc}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage[T1]{fontenc}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage[brazilian]{babel}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{graphicx}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{microtype}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{xcolor}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{indentfirst}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{enumitem}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{tikz}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{xcolor}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{graphicx}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{geometry}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{fontawesome5}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usetikzlibrary{fadings}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\usepackage{hyperref}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "% Informações do documento",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\titulo{\\Huge \\textbf{Investindo com Sabedoria:\\\\Guia Prático para Iniciantes}}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\autor{Luciana Araujo}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\local{Brasil}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\data{Maio de 2025}",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\instituicao{} % Opcional",
+    "style": {}
+  },
+  {
+    "type": "text",
+    "content": "\\begin{document}",
+    "style": {}
+  },
+  {
+    "type": "section",
+    "title": "A Importância de Investir aos Poucos",
+    "level": 1,
+    "content": []
+  },
+  {
+    "type": "section",
+    "title": "Por que começar pequeno é uma estratégia poderosa",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent Quando falamos em investimentos, muitas pessoas imaginam executivos de terno, gráficos complexos e grandes quantias de dinheiro. Essa imagem não poderia estar mais distante da realidade que quero compartilhar com você. Investir, na sua essência mais pura, significa colocar recursos hoje para colher benefícios no futuro. E para isso, você não precisa começar com milhares de reais.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.5cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent Investir R\\$30 por mês pode parecer insignificante quando comparamos com os valores que vemos nos noticiários financeiros. ``O que R\\$30 podem fazer?'', você pode se perguntar. A resposta está em um dos princípios mais fascinantes da matemática financeira: os juros compostos.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.5cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent Pra mim, os juros compostos são tipo magia disfarçada de matemática.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.5cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent Quando você investe, mesmo pequenas quantias, seu dinheiro gera rendimentos. Na rodada seguinte, você não está mais investindo apenas os R\\$30 iniciais, mas também os rendimentos que eles geraram. Com o tempo, esse efeito se multiplica, criando um verdadeiro ``efeito bola de neve''.",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Segurança:} Baixo risco de perder o valor investido",
+      "\\textbf{Liquidez:} Facilidade de transformar o investimento em dinheiro quando necessário",
+      "\\textbf{Rentabilidade:} Alto potencial de retorno sobre o capital investido\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "A Trindade Impossível dos Investimentos",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent Esse conceito estabelece que existem três características desejáveis em qualquer investimento:",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.5cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent A \"regra de ouro\" do mercado financeiro diz que: \\textbf{É impossível ter as três características ao mesmo tempo em um único investimento}. Você sempre precisará abrir mão de pelo menos uma delas.",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "title": "O Triângulo das Escolhas",
+    "level": 3,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent Imagine um triângulo com esses três vértices. Você pode escolher no máximo dois deles, mas nunca os três simultaneamente:",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\begin{center}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\coordinate (A) at (0,0);",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\coordinate (B) at (4,0);",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\coordinate (C) at (2,3.5);",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\draw (A) -- (B) -- (C) -- cycle;",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\node[below] at (A) {LIQUIDEZ};",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\node[below] at (B) {RENTABILIDADE};",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\node[above] at (C) {SEGURANÇA};",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\node at (2,1.5) {\\textbf{Escolha apenas dois}};",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{tikzpicture}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "headers": [
+      "\\textbf{Produto}",
+      "\\textbf{IR?}",
+      "\\textbf{FGC?}",
+      "\\textbf{Liquidez}",
+      "\\textbf{Prazo Mín.}",
+      "\\textbf{Risco}"
+    ],
+    "rows": [
+      [
+        "CDB",
+        "Sim",
+        "Sim",
+        "Diária/venc.",
+        "1 dia+",
+        "Baixo"
+      ],
+      [
+        "LCI/LCA",
+        "Não (PF)",
+        "Sim",
+        "Varia (90d+)",
+        "90 dias",
+        "Baixo"
+      ],
+      [
+        "LC",
+        "Sim",
+        "Sim",
+        "Varia",
+        "90 dias",
+        "Baixo"
+      ],
+      [
+        "LF",
+        "Sim",
+        "Não",
+        "Sem liquidez",
+        "2 anos",
+        "Médio"
+      ],
+      [
+        "Debênture",
+        "Sim/Não*",
+        "Não",
+        "Merc. sec.",
+        "Varia",
+        "Médio/Alto"
+      ]
+    ],
+    "caption": null
+  },
+  {
+    "type": "highlight",
+    "content": "\\textbf{Observação importante:} Mesmo que você tenha um perfil arrojado, isso não significa que pode tomar grandes riscos com objetivos de curto prazo. No curto prazo, o tempo não está do seu lado — e a volatilidade pode te prejudicar.",
+    "style": "important"
+  },
+  {
+    "type": "section",
+    "title": "Comparativo de Investimentos",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\caption{Comparativo de Investimentos em Renda Fixa}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\label{tab:rendafixa}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{table}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\begin{center}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "}}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{minipage}}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "title": "Fórmulas Financeiras Úteis",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "A fórmula dos juros compostos com aportes regulares é dada por:",
+        "style": {}
+      }
+    ]
+  }
+]

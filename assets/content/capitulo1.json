@@ -1,0 +1,128 @@
+[
+  {
+    "type": "section",
+    "title": "A Importância de Investir aos Poucos",
+    "level": 1,
+    "content": [
+      {
+        "type": "section",
+        "title": "Por que começar pequeno é uma estratégia poderosa",
+        "level": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Quando falamos em investimentos, muitas pessoas imaginam executivos de terno, gráficos complexos e grandes quantias de dinheiro. Essa imagem não poderia estar mais distante da realidade que quero compartilhar com você. Investir, na sua essência mais pura, significa colocar recursos hoje para colher benefícios no futuro. E para isso, você não precisa começar com milhares de reais.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Investir R$30 por mês pode parecer insignificante quando comparamos com os valores que vemos nos noticiários financeiros. "O que R$30 podem fazer?", você pode se perguntar. A resposta está em um dos princípios mais fascinantes da matemática financeira: os juros compostos.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Pra mim, os juros compostos são tipo magia disfarçada de matemática.",
+            "style": {
+              "italic": true
+            }
+          },
+          {
+            "type": "formula",
+            "content": "M = P \\cdot (1 + i)^n + A \\cdot \\frac{(1 + i)^n - 1}{i}"
+          },
+          {
+            "type": "text",
+            "content": "Onde:",
+            "style": {}
+          },
+          {
+            "type": "list",
+            "items": [
+              "M = Montante final",
+              "P = Principal (investimento inicial)",
+              "i = Taxa de juros (por período)",
+              "n = Número de períodos",
+              "A = Valor do aporte periódico"
+            ],
+            "ordered": false
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "A Trindade Impossível dos Investimentos",
+        "level": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Esse conceito estabelece que existem três características desejáveis em qualquer investimento:",
+            "style": {}
+          },
+          {
+            "type": "list",
+            "items": [
+              {
+                "type": "text",
+                "content": "Segurança: Baixo risco de perder o valor investido",
+                "style": {
+                  "bold": true
+                }
+              },
+              {
+                "type": "text",
+                "content": "Liquidez: Facilidade de transformar o investimento em dinheiro quando necessário",
+                "style": {
+                  "bold": true
+                }
+              },
+              {
+                "type": "text",
+                "content": "Rentabilidade: Alto potencial de retorno sobre o capital investido",
+                "style": {
+                  "bold": true
+                }
+              }
+            ],
+            "ordered": false
+          },
+          {
+            "type": "text",
+            "content": "A "regra de ouro" do mercado financeiro diz que: É impossível ter as três características ao mesmo tempo em um único investimento. Você sempre precisará abrir mão de pelo menos uma delas.",
+            "style": {
+              "bold": true
+            }
+          },
+          {
+            "type": "image",
+            "svg": "<svg width=\"400\" height=\"300\" viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"200,50 50,250 350,250\" stroke=\"#2E7D32\" stroke-width=\"2\" fill=\"none\"/><text x=\"200\" y=\"40\" text-anchor=\"middle\" font-size=\"16\" fill=\"#2E7D32\">SEGURANÇA</text><text x=\"40\" y=\"270\" text-anchor=\"middle\" font-size=\"16\" fill=\"#2E7D32\">LIQUIDEZ</text><text x=\"360\" y=\"270\" text-anchor=\"middle\" font-size=\"16\" fill=\"#2E7D32\">RENTABILIDADE</text><text x=\"200\" y=\"170\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">Escolha apenas dois</text></svg>",
+            "caption": "O Triângulo das Escolhas"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Comparativo de Investimentos",
+        "level": 2,
+        "content": [
+          {
+            "type": "table",
+            "headers": ["Produto", "IR?", "FGC?", "Liquidez", "Prazo Mín.", "Risco"],
+            "rows": [
+              ["CDB", "Sim", "Sim", "Diária/venc.", "1 dia+", "Baixo"],
+              ["LCI/LCA", "Não (PF)", "Sim", "Varia (90d+)", "90 dias", "Baixo"],
+              ["LC", "Sim", "Sim", "Varia", "90 dias", "Baixo"],
+              ["LF", "Sim", "Não", "Sem liquidez", "2 anos", "Médio"],
+              ["Debênture", "Sim/Não*", "Não", "Merc. sec.", "Varia", "Médio/Alto"]
+            ],
+            "caption": "Comparativo de Investimentos em Renda Fixa"
+          },
+          {
+            "type": "highlight",
+            "content": "Mesmo que você tenha um perfil arrojado, isso não significa que pode tomar grandes riscos com objetivos de curto prazo. No curto prazo, o tempo não está do seu lado — e a volatilidade pode te prejudicar.",
+            "style": "important"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -9,7 +9,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "test": "jest"
+    "test": "jest",
+    "convert-latex": "node ./scripts/latex-converter.js"
   },
   "jest": {
     "preset": "jest-expo",

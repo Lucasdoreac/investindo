@@ -1,0 +1,131 @@
+% Documento baseado nas normas ABNT usando abnTeX2
+\documentclass[
+  12pt,
+  a4paper,
+  openright,
+  oneside,
+  chapter=TITLE,
+  section=TITLE
+]{abntex2}
+
+% Pacotes fundamentais
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fontawesome5}
+\usetikzlibrary{fadings}
+\usepackage{hyperref}
+
+% Informações do documento
+\titulo{\Huge \textbf{Investindo com Sabedoria:\\Guia Prático para Iniciantes}}
+\autor{Luciana Araujo}
+\local{Brasil}
+\data{Maio de 2025}
+\instituicao{} % Opcional
+
+\begin{document}
+
+\chapter{A Importância de Investir aos Poucos}
+
+\section{Por que começar pequeno é uma estratégia poderosa}
+
+\noindent Quando falamos em investimentos, muitas pessoas imaginam executivos de terno, gráficos complexos e grandes quantias de dinheiro. Essa imagem não poderia estar mais distante da realidade que quero compartilhar com você. Investir, na sua essência mais pura, significa colocar recursos hoje para colher benefícios no futuro. E para isso, você não precisa começar com milhares de reais.
+
+\vspace{0.5cm}
+\noindent Investir R\$30 por mês pode parecer insignificante quando comparamos com os valores que vemos nos noticiários financeiros. ``O que R\$30 podem fazer?'', você pode se perguntar. A resposta está em um dos princípios mais fascinantes da matemática financeira: os juros compostos.
+
+\vspace{0.5cm}
+\noindent Pra mim, os juros compostos são tipo magia disfarçada de matemática.
+
+\vspace{0.5cm}
+\noindent Quando você investe, mesmo pequenas quantias, seu dinheiro gera rendimentos. Na rodada seguinte, você não está mais investindo apenas os R\$30 iniciais, mas também os rendimentos que eles geraram. Com o tempo, esse efeito se multiplica, criando um verdadeiro ``efeito bola de neve''.
+
+\section{A Trindade Impossível dos Investimentos}
+
+\noindent Esse conceito estabelece que existem três características desejáveis em qualquer investimento:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Segurança:} Baixo risco de perder o valor investido
+    \item \textbf{Liquidez:} Facilidade de transformar o investimento em dinheiro quando necessário
+    \item \textbf{Rentabilidade:} Alto potencial de retorno sobre o capital investido
+\end{itemize}
+
+\vspace{0.5cm}
+\noindent A "regra de ouro" do mercado financeiro diz que: \textbf{É impossível ter as três características ao mesmo tempo em um único investimento}. Você sempre precisará abrir mão de pelo menos uma delas.
+
+\subsection{O Triângulo das Escolhas}
+
+\noindent Imagine um triângulo com esses três vértices. Você pode escolher no máximo dois deles, mas nunca os três simultaneamente:
+
+\begin{center}
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (2,3.5);
+
+\draw (A) -- (B) -- (C) -- cycle;
+
+\node[below] at (A) {LIQUIDEZ};
+\node[below] at (B) {RENTABILIDADE};
+\node[above] at (C) {SEGURANÇA};
+
+\node at (2,1.5) {\textbf{Escolha apenas dois}};
+\end{tikzpicture}
+\end{center}
+
+\section{Comparativo de Investimentos}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|p{2cm}|c|c|c|c|c|}
+\hline
+\textbf{Produto} & \textbf{IR?} & \textbf{FGC?} & \textbf{Liquidez} & \textbf{Prazo Mín.} & \textbf{Risco} \\
+\hline
+CDB & Sim & Sim & Diária/venc. & 1 dia+ & Baixo \\
+\hline
+LCI/LCA & Não (PF) & Sim & Varia (90d+) & 90 dias & Baixo \\
+\hline
+LC & Sim & Sim & Varia & 90 dias & Baixo \\
+\hline
+LF & Sim & Não & Sem liquidez & 2 anos & Médio \\
+\hline
+Debênture & Sim/Não* & Não & Merc. sec. & Varia & Médio/Alto \\
+\hline
+\end{tabular}
+\caption{Comparativo de Investimentos em Renda Fixa}
+\label{tab:rendafixa}
+\end{table}
+
+\begin{center}
+\fbox{\begin{minipage}{0.85\textwidth}
+\noindent\fbox{\parbox{\textwidth}{
+\textbf{Observação importante:} Mesmo que você tenha um perfil arrojado, isso não significa que pode tomar grandes riscos com objetivos de curto prazo. No curto prazo, o tempo não está do seu lado — e a volatilidade pode te prejudicar.
+}}
+\end{minipage}}
+\end{center}
+
+\section{Fórmulas Financeiras Úteis}
+
+A fórmula dos juros compostos com aportes regulares é dada por:
+
+$$M = P \cdot (1 + i)^n + A \cdot \frac{(1 + i)^n - 1}{i}$$
+
+Onde:
+\begin{itemize}
+    \item $M$ = Montante final
+    \item $P$ = Principal (investimento inicial)
+    \item $i$ = Taxa de juros (por período)
+    \item $n$ = Número de períodos
+    \item $A$ = Valor do aporte periódico
+\end{itemize}
+
+\end{document}
