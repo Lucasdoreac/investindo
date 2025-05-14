@@ -9,10 +9,12 @@ import {
   Modal,
   FlatList,
   Alert,
-  Dimensions
+  Dimensions,
+  Platform
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { PieChart } from 'react-native-chart-kit';
+import { useNavigation } from '@react-navigation/native';
 
 /**
  * Interface para representar um tipo de ativo da carteira
@@ -47,6 +49,22 @@ interface Alocacao {
  * baseada em seu perfil de investidor e objetivos financeiros
  */
 export default function MontadorCarteiraScreen() {
+  // Use o hook de navegação
+  const navigation = useNavigation();
+  
+  // Defina o título da página na montagem do componente (específico para web)
+  React.useLayoutEffect(() => {
+    if (Platform.OS === 'web') {
+      navigation.setOptions({
+        title: 'Montador de Carteira',
+        headerStyle: {
+          backgroundColor: '#2E7D32',
+        },
+        headerTintColor: '#FFFFFF',
+      });
+    }
+  }, [navigation]);
+  
   // Estado para controlar o valor total da carteira (opcional para o usuário)
   const [valorTotal, setValorTotal] = useState('');
   

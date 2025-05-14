@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { BarChart } from 'react-native-chart-kit';
+import { useNavigation } from '@react-navigation/native';
 
 /**
  * Interface para representar um investimento na escada de vencimentos
@@ -33,6 +34,22 @@ interface Investimento {
  * investimentos em renda fixa.
  */
 export default function EscadaVencimentosScreen() {
+  // Use o hook de navegação
+  const navigation = useNavigation();
+  
+  // Defina o título da página na montagem do componente (específico para web)
+  React.useLayoutEffect(() => {
+    if (Platform.OS === 'web') {
+      navigation.setOptions({
+        title: 'Escada de Vencimentos',
+        headerStyle: {
+          backgroundColor: '#2E7D32',
+        },
+        headerTintColor: '#FFFFFF',
+      });
+    }
+  }, [navigation]);
+  
   // Estados para os campos de entrada do novo investimento
   const [valorInvestimento, setValorInvestimento] = useState('1000');
   const [rendimentoAnual, setRendimentoAnual] = useState('12');

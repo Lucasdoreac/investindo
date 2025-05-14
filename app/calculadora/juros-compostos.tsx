@@ -13,12 +13,29 @@ import {
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { LineChart } from 'react-native-chart-kit';
+import { useNavigation } from '@react-navigation/native';
 
 /**
  * Calculadora de Juros Compostos
  * Permite que o usuário simule diferentes cenários de investimento com juros compostos
  */
 export default function JurosCompostosScreen() {
+  // Use o hook de navegação
+  const navigation = useNavigation();
+  
+  // Defina o título da página na montagem do componente (específico para web)
+  React.useLayoutEffect(() => {
+    if (Platform.OS === 'web') {
+      navigation.setOptions({
+        title: 'Calculadora de Juros Compostos',
+        headerStyle: {
+          backgroundColor: '#2E7D32',
+        },
+        headerTintColor: '#FFFFFF',
+      });
+    }
+  }, [navigation]);
+  
   // Estados para os campos de entrada
   const [valorInicial, setValorInicial] = useState('100');
   const [aportesMensais, setAportesMensais] = useState('30');

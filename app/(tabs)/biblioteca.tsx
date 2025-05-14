@@ -398,7 +398,7 @@ Ao longo deste livro, exploramos vários conceitos fundamentais que, juntos, for
 
 ## FRASE FINAL
 
-"A verdadeira liberdade financeira não se encontra em promessas de riqueza fácil, mas no poder de entender o que poucos explicam. Investir no é seguir modismos - é escolher com consciência o que faz sentido pra você. Cada decisão é uma semente, e o tempo é o terreno onde ela frutifica. Só colhe bons frutos quem recusa o óbvio, questiona o que escuta e constrói com propósito. Não caia em promessas fáceis, caia na real. Riqueza de verdade nasce de paciência, estratégia e coragem pra pensar por conta própria."
+"A verdadeira liberdade financeira não se encontra em promessas de riqueza fácil, mas no poder de entender o que poucos explicam. Investir não é seguir modismos - é escolher com consciência o que faz sentido pra você. Cada decisão é uma semente, e o tempo é o terreno onde ela frutifica. Só colhe bons frutos quem recusa o óbvio, questiona o que escuta e constrói com propósito. Não caia em promessas fáceis, caia na real. Riqueza de verdade nasce de paciência, estratégia e coragem pra pensar por conta própria."
 
 Boa sorte em sua jornada financeira!`,
       icone: 'check-circle',
@@ -417,7 +417,7 @@ Boa sorte em sua jornada financeira!`,
       <View style={styles.quoteContainer}>
         <FontAwesome name="quote-left" size={24} color="#2E7D32" style={styles.quoteIcon} />
         <Text style={styles.quoteText}>
-          "Investir no é seguir modismos - é escolher com consciência o que faz sentido pra você. 
+          "Investir não é seguir modismos - é escolher com consciência o que faz sentido pra você. 
           Cada decisão é uma semente, e o tempo é o terreno onde ela frutifica."
         </Text>
         <Text style={styles.quoteAuthor}>- Luciana Araujo</Text>

@@ -11,6 +11,7 @@ import {
   Platform
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 /**
  * Tipos de investimentos a comparar
@@ -34,6 +35,22 @@ interface Investimento {
  * Permite comparar diferentes produtos financeiros
  */
 export default function ComparadorScreen() {
+  // Use o hook de navegação
+  const navigation = useNavigation();
+  
+  // Defina o título da página na montagem do componente (específico para web)
+  React.useLayoutEffect(() => {
+    if (Platform.OS === 'web') {
+      navigation.setOptions({
+        title: 'Comparador de Investimentos',
+        headerStyle: {
+          backgroundColor: '#2E7D32',
+        },
+        headerTintColor: '#FFFFFF',
+      });
+    }
+  }, [navigation]);
+  
   // Definição inicial dos investimentos a comparar
   const [investimentos, setInvestimentos] = useState<Investimento[]>([
     {

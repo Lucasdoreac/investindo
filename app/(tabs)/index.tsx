@@ -23,8 +23,8 @@ export default function HomeScreen() {
       </View>
 
       <View style={styles.cardsContainer}>
-        <TouchableOpacity style={styles.card}>
-          <Link href="/simuladores" asChild>
+        <Link href="/simuladores" asChild>
+          <TouchableOpacity style={styles.card}>
             <View style={styles.cardContent}>
               <FontAwesome name="calculator" size={40} color="#2E7D32" />
               <Text style={styles.cardTitle}>Simuladores</Text>
@@ -32,11 +32,11 @@ export default function HomeScreen() {
                 Faça cálculos de juros compostos e compare diferentes investimentos
               </Text>
             </View>
-          </Link>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </Link>
 
-        <TouchableOpacity style={styles.card}>
-          <Link href="/biblioteca" asChild>
+        <Link href="/biblioteca" asChild>
+          <TouchableOpacity style={styles.card}>
             <View style={styles.cardContent}>
               <FontAwesome name="book" size={40} color="#2E7D32" />
               <Text style={styles.cardTitle}>Biblioteca</Text>
@@ -44,11 +44,11 @@ export default function HomeScreen() {
                 Acesse o conteúdo completo organizado por capítulos
               </Text>
             </View>
-          </Link>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </Link>
 
-        <TouchableOpacity style={styles.card}>
-          <Link href="/perfil" asChild>
+        <Link href="/perfil" asChild>
+          <TouchableOpacity style={styles.card}>
             <View style={styles.cardContent}>
               <FontAwesome name="user" size={40} color="#2E7D32" />
               <Text style={styles.cardTitle}>Perfil do Investidor</Text>
@@ -56,11 +56,11 @@ export default function HomeScreen() {
                 Descubra seu perfil com nosso questionário
               </Text>
             </View>
-          </Link>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </Link>
 
-        <TouchableOpacity style={styles.card}>
-          <Link href="/glossario" asChild>
+        <Link href="/glossario" asChild>
+          <TouchableOpacity style={styles.card}>
             <View style={styles.cardContent}>
               <FontAwesome name="list" size={40} color="#2E7D32" />
               <Text style={styles.cardTitle}>Glossário</Text>
@@ -68,8 +68,8 @@ export default function HomeScreen() {
                 Consulte termos financeiros explicados de forma simples
               </Text>
             </View>
-          </Link>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </Link>
       </View>
 
       <View style={styles.quotesContainer}>
@@ -115,11 +115,11 @@ export default function HomeScreen() {
       </View>
 
       <View style={styles.ctaContainer}>
-        <TouchableOpacity style={styles.ctaButton}>
-          <Link href="/calculadora/juros-compostos" asChild>
+        <Link href="/calculadora/juros-compostos" asChild>
+          <TouchableOpacity style={styles.ctaButton}>
             <Text style={styles.ctaButtonText}>Começar a Simular Investimentos</Text>
-          </Link>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </Link>
       </View>
     </ScrollView>
   );
