@@ -63,4 +63,4 @@ Este projeto é apenas para fins educacionais e demonstrativos.
 
 ---
 
-Desenvolvido por Lucas Cardoso com base no eBook "Investindo com Sabedoria" de Luciana Araujo.
+Desenvolvido por Lucas Dórea Cardoso (<ludoc.dev@gmail.com>) com base no eBook "Investindo com Sabedoria" de Luciana Araujo.
