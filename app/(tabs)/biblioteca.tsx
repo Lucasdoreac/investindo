@@ -13,6 +13,15 @@ import { FontAwesome } from '@expo/vector-icons';
 import EbookContent from '../../components/EbookContent';
 import EnhancedEbookContent from '../../components/EnhancedEbookContent';
 
+// Importar todos os arquivos JSON de capítulos de forma estática
+// Isso permite que o Metro bundler encontre todos os arquivos durante a compilação
+const capitulosLatex = {
+  '1': require('../../assets/content/capitulo1.json')
+  // Adicione outros capítulos à medida que forem convertidos:
+  // '2': require('../../assets/content/capitulo2.json'),
+  // '3': require('../../assets/content/capitulo3.json'),
+};
+
 /**
  * Interface para representar um capítulo do eBook
  */
@@ -49,8 +58,13 @@ export default function BibliotecaScreen() {
     setErroLatex(null);
     
     try {
-      // Tenta carregar o arquivo JSON correspondente ao capítulo
-      const conteudoLatex = require(`../../assets/content/capitulo${id}.json`);
+      // Verificar se o ID existe no mapeamento de capítulos
+      if (!capitulosLatex[id]) {
+        throw new Error(`Conteúdo LaTeX para capítulo ${id} não encontrado`);
+      }
+      
+      // Usar o conteúdo do mapeamento estático
+      const conteudoLatex = capitulosLatex[id];
       
       // Atualiza o capítulo selecionado com o conteúdo LaTeX
       setCapituloSelecionado(prev => {
