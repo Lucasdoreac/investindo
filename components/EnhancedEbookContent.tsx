@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Dimensions, Platform, TouchableOpacity } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -24,7 +24,7 @@ interface LatexHighlight {
 
 interface LatexList {
   type: 'list';
-  items: (string | LatexElement[])[];
+  items: (string | LatexElement | LatexElement[])[];
   ordered?: boolean;
 }
 
@@ -193,11 +193,29 @@ function renderTable(element: LatexTable, index: number): React.ReactNode {
   );
 }
 
-// Renderiza fórmula matemática usando WebView com KaTeX
+// Renderiza fórmula matemática usando WebView com KaTeX ou texto simples para web
 function renderFormula(element: LatexFormula, index: number): React.ReactNode {
   const { content } = element;
   
-  // Configura HTML com KaTeX para renderizar a fórmula
+  // Verificar se estamos na plataforma web
+  const isWeb = Platform.OS === 'web';
+  
+  if (isWeb) {
+    // Renderização simplificada para plataforma web
+    return (
+      <View key={`formula-${index}`} style={styles.formulaContainer}>
+        <Text style={styles.formulaText}>
+          {content}
+        </Text>
+        <Text style={styles.formulaNote}>
+          (Fórmula matemática: visualização completa disponível no aplicativo móvel)
+        </Text>
+      </View>
+    );
+  }
+  
+  // Configura HTML com KaTeX para renderizar a fórmula (para plataformas nativas)
+  // Melhorado com tratamento de erros e fallback
   const html = `
     <!DOCTYPE html>
     <html>
@@ -214,9 +232,20 @@ function renderFormula(element: LatexFormula, index: number): React.ReactNode {
             justify-content: center;
             background-color: transparent;
             overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
           }
           .formula-container {
             padding: 8px 0;
+            width: 100%;
+            text-align: center;
+          }
+          .error-message {
+            color: #666;
+            font-style: italic;
+            padding: 10px;
+            border-left: 3px solid #c00;
+            margin: 10px 0;
+            background-color: #f8f8f8;
           }
         </style>
       </head>
@@ -224,14 +253,27 @@ function renderFormula(element: LatexFormula, index: number): React.ReactNode {
         <div class="formula-container" id="formula"></div>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
-            katex.render("${content.replace(/"/g, '\\"')}", document.getElementById('formula'), {
-              throwOnError: false,
-              displayMode: true
-            });
-            
-            // Ajusta altura do WebView
-            const height = document.body.scrollHeight;
-            window.ReactNativeWebView.postMessage(height.toString());
+            try {
+              // Verificar se KaTeX está disponível
+              if (typeof katex === 'undefined') {
+                throw new Error('KaTeX não está disponível');
+              }
+              
+              // Renderizar a fórmula
+              katex.render("${content.replace(/"/g, '\\"')}", document.getElementById('formula'), {
+                throwOnError: false,
+                displayMode: true
+              });
+            } catch (error) {
+              // Fallback para quando KaTeX falhar
+              document.getElementById('formula').innerHTML = 
+                '<div class="error-message">Fórmula matemática: <br/><code>${content.replace(/"/g, '\\"')}</code></div>';
+              console.error('Erro ao renderizar fórmula LaTeX:', error);
+            } finally {
+              // Ajusta altura do WebView
+              const height = document.body.scrollHeight;
+              window.ReactNativeWebView.postMessage(height.toString());
+            }
           });
         </script>
       </body>
@@ -248,16 +290,50 @@ function renderFormula(element: LatexFormula, index: number): React.ReactNode {
     }
   };
   
+  const [hasError, setHasError] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  // Função para lidar com erros no WebView
+  const handleError = () => {
+    setHasError(true);
+    setIsLoading(false);
+  };
+
+  // Função para recarregar o WebView
+  const reloadWebView = () => {
+    setHasError(false);
+    setIsLoading(true);
+  };
+
   return (
     <View key={`formula-${index}`} style={styles.formulaContainer}>
-      <WebView
-        source={{ html }}
-        style={[styles.formulaWebView, { height: webViewHeight }]}
-        scrollEnabled={false}
-        onMessage={onMessage}
-        originWhitelist={['*']}
-        backgroundColor="transparent"
-      />
+      {isLoading && (
+        <View style={styles.loadingContainer}>
+          <Text style={styles.loadingText}>Carregando fórmula...</Text>
+        </View>
+      )}
+      
+      {hasError ? (
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>Não foi possível renderizar a fórmula matemática.</Text>
+          <Text style={styles.formulaText}>{content}</Text>
+          <TouchableOpacity style={styles.reloadButton} onPress={reloadWebView}>
+            <Text style={styles.reloadButtonText}>Tentar novamente</Text>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        <WebView
+          source={{ html }}
+          style={[styles.formulaWebView, { height: webViewHeight }]}
+          scrollEnabled={false}
+          onMessage={onMessage}
+          onError={handleError}
+          onHttpError={handleError}
+          onLoad={() => setIsLoading(false)}
+          originWhitelist={['*']}
+          backgroundColor="transparent"
+        />
+      )}
     </View>
   );
 }
@@ -319,7 +395,13 @@ function renderList(element: LatexList, index: number): React.ReactNode {
             {typeof item === 'string' ? (
               <Text style={styles.listItemText}>{item}</Text>
             ) : (
-              item.map((subItem, subIdx) => renderElement(subItem, subIdx))
+              // Verificação segura para garantir que item é um array antes de chamar .map()
+              Array.isArray(item) ? (
+                item.map((subItem, subIdx) => renderElement(subItem, subIdx))
+              ) : (
+                // Se não for string nem array, renderiza como elemento individual
+                renderElement(item, 0)
+              )
             )}
           </View>
         </View>
@@ -332,8 +414,26 @@ function renderList(element: LatexList, index: number): React.ReactNode {
 function renderImage(element: LatexImage, index: number): React.ReactNode {
   const { svg, caption } = element;
   
-  // Se for um SVG, renderiza via WebView
+  // Se for um SVG, renderiza via WebView ou via componente alternativo para web
   if (svg) {
+    // Verificar se estamos na plataforma web
+    const isWeb = Platform.OS === 'web';
+    
+    if (isWeb) {
+      // Para a web, usamos uma abordagem diferente para SVG
+      // Esta é uma renderização simplificada - na plataforma web mostramos apenas uma mensagem
+      return (
+        <View key={`image-${index}`} style={styles.imageContainer}>
+          <View style={styles.placeholderSvg}>
+            <Text style={styles.placeholderText}>
+              (Diagrama visual disponível no aplicativo móvel)
+            </Text>
+          </View>
+          {caption && <Text style={styles.imageCaption}>{caption}</Text>}
+        </View>
+      );
+    }
+    
     const html = `
       <!DOCTYPE html>
       <html>
@@ -348,19 +448,46 @@ function renderImage(element: LatexImage, index: number): React.ReactNode {
               justify-content: center;
               background-color: transparent;
               overflow: hidden;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             }
             svg {
               max-width: 100%;
               height: auto;
             }
+            .error-message {
+              color: #666;
+              font-style: italic;
+              padding: 10px;
+              border-left: 3px solid #c00;
+              margin: 10px 0;
+              background-color: #f8f8f8;
+              text-align: center;
+              width: 100%;
+            }
           </style>
         </head>
         <body>
-          ${svg}
+          <div id="svg-container">
+            ${svg}
+          </div>
           <script>
             document.addEventListener('DOMContentLoaded', function() {
-              const height = document.body.scrollHeight;
-              window.ReactNativeWebView.postMessage(height.toString());
+              try {
+                // Verificar se o SVG foi renderizado corretamente
+                const svgElement = document.querySelector('svg');
+                if (!svgElement) {
+                  throw new Error('SVG não foi renderizado corretamente');
+                }
+              } catch (error) {
+                // Fallback para quando o SVG falhar
+                document.getElementById('svg-container').innerHTML = 
+                  '<div class="error-message">Não foi possível renderizar o diagrama SVG.</div>';
+                console.error('Erro ao renderizar SVG:', error);
+              } finally {
+                // Ajusta altura do WebView
+                const height = document.body.scrollHeight;
+                window.ReactNativeWebView.postMessage(height.toString());
+              }
             });
           </script>
         </body>
@@ -376,16 +503,49 @@ function renderImage(element: LatexImage, index: number): React.ReactNode {
       }
     };
     
+    const [hasError, setHasError] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(true);
+
+    // Função para lidar com erros no WebView
+    const handleError = () => {
+      setHasError(true);
+      setIsLoading(false);
+    };
+
+    // Função para recarregar o WebView
+    const reloadWebView = () => {
+      setHasError(false);
+      setIsLoading(true);
+    };
+
     return (
       <View key={`image-${index}`} style={styles.imageContainer}>
-        <WebView
-          source={{ html }}
-          style={[styles.svgWebView, { height: webViewHeight }]}
-          scrollEnabled={false}
-          onMessage={onMessage}
-          originWhitelist={['*']}
-          backgroundColor="transparent"
-        />
+        {isLoading && (
+          <View style={styles.loadingContainer}>
+            <Text style={styles.loadingText}>Carregando diagrama...</Text>
+          </View>
+        )}
+        
+        {hasError ? (
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorText}>Não foi possível renderizar o diagrama SVG.</Text>
+            <TouchableOpacity style={styles.reloadButton} onPress={reloadWebView}>
+              <Text style={styles.reloadButtonText}>Tentar novamente</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <WebView
+            source={{ html }}
+            style={[styles.svgWebView, { height: webViewHeight }]}
+            scrollEnabled={false}
+            onMessage={onMessage}
+            onError={handleError}
+            onHttpError={handleError}
+            onLoad={() => setIsLoading(false)}
+            originWhitelist={['*']}
+            backgroundColor="transparent"
+          />
+        )}
         {caption && <Text style={styles.imageCaption}>{caption}</Text>}
       </View>
     );
@@ -640,10 +800,65 @@ const styles = StyleSheet.create({
   formulaContainer: {
     marginVertical: 10,
     width: '100%',
+    padding: 10,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 8,
+    borderLeftWidth: 4,
+    borderLeftColor: '#2E7D32',
   },
   formulaWebView: {
     width: '100%',
     backgroundColor: 'transparent',
+  },
+  formulaText: {
+    fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace',
+    fontSize: 16,
+    textAlign: 'center',
+    padding: 10,
+  },
+  formulaNote: {
+    fontSize: 12,
+    fontStyle: 'italic',
+    color: '#666',
+    textAlign: 'center',
+    marginTop: 5,
+  },
+  // Estilos para carregamento e erros
+  loadingContainer: {
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  loadingText: {
+    fontSize: 14,
+    color: '#666',
+    fontStyle: 'italic',
+  },
+  errorContainer: {
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#f8f8f8',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+  },
+  errorText: {
+    fontSize: 14,
+    color: '#c00',
+    marginBottom: 10,
+  },
+  reloadButton: {
+    backgroundColor: '#2E7D32',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    marginTop: 8,
+  },
+  reloadButtonText: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
   
   // Estilos de destaque
@@ -717,6 +932,22 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontStyle: 'italic',
     color: '#666',
+    textAlign: 'center',
+  },
+  placeholderSvg: {
+    width: '100%',
+    height: 150,
+    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 15,
+  },
+  placeholderText: {
+    color: '#666',
+    fontStyle: 'italic',
     textAlign: 'center',
   },
   

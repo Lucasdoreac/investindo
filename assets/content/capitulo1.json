@@ -16,110 +16,162 @@
           },
           {
             "type": "text",
-            "content": "Investir R$30 por mês pode parecer insignificante quando comparamos com os valores que vemos nos noticiários financeiros. "O que R$30 podem fazer?", você pode se perguntar. A resposta está em um dos princípios mais fascinantes da matemática financeira: os juros compostos.",
+            "content": "Investir R\\$30 por mês pode parecer insignificante quando comparamos com os valores que vemos nos noticiários financeiros. ``O que R\\$30 podem fazer?'', você pode se perguntar. A resposta está em um dos princípios mais fascinantes da matemática financeira: os juros compostos.",
             "style": {}
           },
           {
             "type": "text",
             "content": "Pra mim, os juros compostos são tipo magia disfarçada de matemática.",
-            "style": {
-              "italic": true
-            }
-          },
-          {
-            "type": "formula",
-            "content": "M = P \\cdot (1 + i)^n + A \\cdot \\frac{(1 + i)^n - 1}{i}"
-          },
-          {
-            "type": "text",
-            "content": "Onde:",
             "style": {}
           },
           {
-            "type": "list",
-            "items": [
-              "M = Montante final",
-              "P = Principal (investimento inicial)",
-              "i = Taxa de juros (por período)",
-              "n = Número de períodos",
-              "A = Valor do aporte periódico"
-            ],
-            "ordered": false
+            "type": "text",
+            "content": "Quando você investe, mesmo pequenas quantias, seu dinheiro gera rendimentos. Na rodada seguinte, você não está mais investindo apenas os R\\$30 iniciais, mas também os rendimentos que eles geraram. Com o tempo, esse efeito se multiplica, criando um verdadeiro ``efeito bola de neve''.",
+            "style": {}
           }
         ]
       },
       {
         "type": "section",
-        "title": "A Trindade Impossível dos Investimentos",
+        "title": "Construindo o hábito que transforma finanças",
         "level": 2,
         "content": [
           {
             "type": "text",
-            "content": "Esse conceito estabelece que existem três características desejáveis em qualquer investimento:",
+            "content": "O hábito de investir regularmente é como plantar uma semente que, com cuidado constante, se transforma em uma árvore frutífera. Ao estabelecer uma contribuição mensal automática, mesmo pequena, você cria disciplina financeira. Esta disciplina é o que separa quem apenas sonha com liberdade financeira de quem realmente a constrói.",
             "style": {}
           },
           {
-            "type": "list",
-            "items": [
-              {
-                "type": "text",
-                "content": "Segurança: Baixo risco de perder o valor investido",
-                "style": {
-                  "bold": true
-                }
-              },
-              {
-                "type": "text",
-                "content": "Liquidez: Facilidade de transformar o investimento em dinheiro quando necessário",
-                "style": {
-                  "bold": true
-                }
-              },
-              {
-                "type": "text",
-                "content": "Rentabilidade: Alto potencial de retorno sobre o capital investido",
-                "style": {
-                  "bold": true
-                }
-              }
-            ],
-            "ordered": false
-          },
-          {
             "type": "text",
-            "content": "A "regra de ouro" do mercado financeiro diz que: É impossível ter as três características ao mesmo tempo em um único investimento. Você sempre precisará abrir mão de pelo menos uma delas.",
-            "style": {
-              "bold": true
-            }
-          },
-          {
-            "type": "image",
-            "svg": "<svg width=\"400\" height=\"300\" viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"200,50 50,250 350,250\" stroke=\"#2E7D32\" stroke-width=\"2\" fill=\"none\"/><text x=\"200\" y=\"40\" text-anchor=\"middle\" font-size=\"16\" fill=\"#2E7D32\">SEGURANÇA</text><text x=\"40\" y=\"270\" text-anchor=\"middle\" font-size=\"16\" fill=\"#2E7D32\">LIQUIDEZ</text><text x=\"360\" y=\"270\" text-anchor=\"middle\" font-size=\"16\" fill=\"#2E7D32\">RENTABILIDADE</text><text x=\"200\" y=\"170\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">Escolha apenas dois</text></svg>",
-            "caption": "O Triângulo das Escolhas"
+            "content": "Imagine que você configure um débito automático de R\\$30 todo dia 5 do mês, direcionado para uma conta de investimentos. Esta simplicidade elimina a necessidade de tomar decisões repetitivas – seu dinheiro já está trabalhando por você antes mesmo que você sinta sua falta. Com o tempo, à medida que sua confiança e situação financeira melhoram, você pode gradualmente aumentar esse valor.",
+            "style": {}
           }
         ]
       },
       {
         "type": "section",
-        "title": "Comparativo de Investimentos",
+        "title": "A satisfação de ver seu patrimônio crescer",
         "level": 2,
         "content": [
+          {
+            "type": "text",
+            "content": "Há uma satisfação única em acompanhar o crescimento do seu patrimônio. Lembra da sensação de ver plantas crescerem quando você as cuida diariamente? Ver sua carteira de investimentos crescer proporciona uma sensação semelhante, mas com benefícios ainda mais tangíveis para seu futuro. A cada extrato mensal, você testemunha o poder do tempo e da consistência trabalhando a seu favor.",
+            "style": {}
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "A estratégia de ``fingir que ganha menos''",
+        "level": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Uma das estratégias que mais funcionaram pra mim ao longo dos anos é o que eu chamo de ``fingir que ganhei menos do que realmente ganhei''. Não sei se fui eu quem inventou isso, mas posso dizer que aplico na prática há muito tempo e mudou completamente minha relação com o dinheiro.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Sempre que eu recebia um aumento, um bônus ou qualquer renda extra, em vez de incorporar aquilo no meu padrão de vida, eu fingia que uma parte nem existia. Por exemplo: se meu salário aumentava R\\$300, eu deixava R\\$100 pra mim (porque ninguém é de ferro, né?) e investia os outros R\\$200 direto. Como eu já vivia sem aquele valor antes, não sentia falta.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Essa tática me ajudou a evitar aquela armadilha comum de ``ganhou mais, gasta mais'' — a famosa inflação do estilo de vida. E, aos poucos, isso fez meu patrimônio crescer de forma muito mais consistente e tranquila. Não é sobre se privar, mas sobre fazer escolhas conscientes. Cada aumento virou uma oportunidade de investir mais sem mexer no meu conforto atual.",
+            "style": {}
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "A verdade sobre enriquecer com investimentos",
+        "level": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "É importante esclarecer desde o início: ninguém enriquece da noite para o dia apenas investindo. Investimentos são ferramentas poderosas, mas não são fórmulas mágicas.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "De vez em quando, você ouvirá histórias inspiradoras de pessoas que multiplicaram seu patrimônio com uma única ação, criptoativo ou oportunidade específica. Essas histórias existem, sim, mas representam exceções — e exceções jamais devem ser confundidas com estratégias confiáveis de longo prazo.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "A construção de riqueza genuína está fundamentada em dois pilares essenciais:",
+            "style": {}
+          },
           {
             "type": "table",
-            "headers": ["Produto", "IR?", "FGC?", "Liquidez", "Prazo Mín.", "Risco"],
-            "rows": [
-              ["CDB", "Sim", "Sim", "Diária/venc.", "1 dia+", "Baixo"],
-              ["LCI/LCA", "Não (PF)", "Sim", "Varia (90d+)", "90 dias", "Baixo"],
-              ["LC", "Sim", "Sim", "Varia", "90 dias", "Baixo"],
-              ["LF", "Sim", "Não", "Sem liquidez", "2 anos", "Médio"],
-              ["Debênture", "Sim/Não*", "Não", "Merc. sec.", "Varia", "Médio/Alto"]
+            "headers": [
+              "Qualificação profissional",
+              "Controle de despesas"
             ],
-            "caption": "Comparativo de Investimentos em Renda Fixa"
+            "rows": [
+              [
+                "Empreendedorismo"
+              ],
+              [
+                "Diversificação de fontes de renda"
+              ]
+            ],
+            "caption": null
           },
           {
-            "type": "highlight",
-            "content": "Mesmo que você tenha um perfil arrojado, isso não significa que pode tomar grandes riscos com objetivos de curto prazo. No curto prazo, o tempo não está do seu lado — e a volatilidade pode te prejudicar.",
-            "style": "important"
+            "type": "text",
+            "content": "Aumentar sua capacidade de gerar renda ao longo do tempo — seja por meio de crescimento profissional, empreendedorismo ou outras fontes — é tão fundamental quanto aprender a investir com sabedoria. Um ponto não substitui o outro. Os investimentos potencializam seus esforços, mas não criam riqueza do nada.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Precisamos confrontar uma verdade fundamental: não existem atalhos mágicos para a prosperidade financeira. O mercado financeiro não funciona como um cassino onde você aposta R\\$1.000 e sai com R\\$1 milhão no dia seguinte. Quem promete esse tipo de retorno extraordinário está, na melhor das hipóteses, iludido — e na pior das hipóteses, tentando deliberadamente enganá-lo.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "\\fbox{\\begin{minipage}{0.85\\textwidth}",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "A VERDADEIRA CHAVE PARA CONSTRUIR PATRIMÔNIO",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "\\Large{→ Aumentar sua capacidade de ganhar dinheiro}\n\\Large{→ Investir consistentemente uma parte do que você ganha}",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "\\end{minipage}}",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Isso significa que dedicar-se à sua carreira, buscar qualificação profissional contínua e desenvolver possíveis fontes adicionais de renda é tão importante quanto selecionar investimentos adequados ao seu perfil.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Considere este exemplo prático: um profissional que consegue dobrar sua renda — evoluindo de R\\$3.000 para R\\$6.000 mensais — e mantém o mesmo padrão de vida conseguirá investir significativamente mais do que alguém estagnado na mesma faixa salarial durante anos, mesmo que o segundo indivíduo possua conhecimento aprofundado sobre todos os produtos financeiros disponíveis no mercado.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Por isso, não se deixe capturar pela ilusão de que existem fórmulas secretas ou estratégias milagrosas que substituem o trabalho genuíno e consistente.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "Os milionários que você admira provavelmente não alcançaram esse patamar financeiro através de um único investimento brilhante ou uma jogada de sorte isolada. Eles chegaram onde estão porque dedicaram anos trabalhando com determinação, tomando decisões financeiras inteligentes e mantendo disciplina rigorosa em seus investimentos periódicos. Não existe pulo do gato. Existe persistência.",
+            "style": {}
+          },
+          {
+            "type": "text",
+            "content": "E acredite: com consistência e paciência, mesmo pequenos aportes mensais têm o poder transformador de reconfigurar completamente sua realidade financeira ao longo dos anos. Esta é a verdadeira magia dos investimentos — não um golpe de sorte instantâneo, mas o poder cumulativo de decisões inteligentes tomadas repetidamente ao longo do tempo.",
+            "style": {}
           }
         ]
       }

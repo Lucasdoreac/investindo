@@ -280,9 +280,14 @@ function convertLatexFile(inputFilePath, outputFilePath) {
     const latexContent = fs.readFileSync(inputFilePath, 'utf8');
     const parsed = parseContent(latexContent);
     
+    // Converter para JSON e garantir que todas as aspas sejam retas
+    const jsonString = JSON.stringify(parsed, null, 2)
+      .replace(/[""]/g, '"')  // Substituir aspas curvas por aspas retas
+      .replace(/['']/g, "'"); // Substituir apóstrofos curvos por retos
+    
     fs.writeFileSync(
       outputFilePath,
-      JSON.stringify(parsed, null, 2),
+      jsonString,
       'utf8'
     );
     

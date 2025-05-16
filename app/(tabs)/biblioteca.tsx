@@ -12,14 +12,18 @@ import {
 import { FontAwesome } from '@expo/vector-icons';
 import EbookContent from '../../components/EbookContent';
 import EnhancedEbookContent from '../../components/EnhancedEbookContent';
+import FixedContentView from '../../components/FixedContentView';
+import { processarCapituloJson } from '../../components/LatexProcessorEnhanced';
 
 // Importar todos os arquivos JSON de capítulos de forma estática
 // Isso permite que o Metro bundler encontre todos os arquivos durante a compilação
 const capitulosLatex = {
-  '1': require('../../assets/content/capitulo1.json')
-  // Adicione outros capítulos à medida que forem convertidos:
-  // '2': require('../../assets/content/capitulo2.json'),
-  // '3': require('../../assets/content/capitulo3.json'),
+  '1': require('../../assets/content/capitulo1.json'),
+  '2': require('../../assets/content/capitulo2.json'),
+  '3': require('../../assets/content/capitulo3.json'),
+  '4': require('../../assets/content/capitulo4.json'),
+  '5': require('../../assets/content/capitulo5.json'),
+  '6': require('../../assets/content/capitulo6.json')
 };
 
 /**
@@ -45,14 +49,24 @@ export default function BibliotecaScreen() {
   const [carregandoLatex, setCarregandoLatex] = useState(false);
   const [erroLatex, setErroLatex] = useState<string | null>(null);
   
+  // Estado para controlar a visualização - agora com padrão false para usar visualização avançada automaticamente
+  const [forcarVisualizacaoPadrao, setForcarVisualizacaoPadrao] = useState(false);
+  
   // Tenta carregar o conteúdo LaTeX convertido para o capítulo selecionado
   useEffect(() => {
-    if (capituloSelecionado && !capituloSelecionado.conteudoLatex && capituloSelecionado.temConteudoLatex) {
+    // Só carrega LaTeX automaticamente se:
+    // 1. Temos um capítulo selecionado
+    // 2. Ele tem conteúdo LaTeX disponível
+    // 3. Ainda não carregamos o conteúdo LaTeX
+    // 4. O usuário NÃO forçou explicitamente a visualização padrão
+    if (capituloSelecionado && 
+        capituloSelecionado.temConteudoLatex && 
+        !capituloSelecionado.conteudoLatex && 
+        !forcarVisualizacaoPadrao) {
       carregarConteudoLatex(capituloSelecionado.id);
     }
-  }, [capituloSelecionado]);
+  }, [capituloSelecionado, forcarVisualizacaoPadrao]);
   
-  // Função para carregar o conteúdo LaTeX convertido
   const carregarConteudoLatex = async (id: string) => {
     setCarregandoLatex(true);
     setErroLatex(null);
@@ -64,7 +78,11 @@ export default function BibliotecaScreen() {
       }
       
       // Usar o conteúdo do mapeamento estático
-      const conteudoLatex = capitulosLatex[id];
+      let conteudoLatex = capitulosLatex[id];
+      
+      // Processar conteúdo LaTeX para remover comandos não suportados
+      // Aplicamos o processador para todos os capítulos
+      conteudoLatex = processarCapituloJson(id, conteudoLatex);
       
       // Atualiza o capítulo selecionado com o conteúdo LaTeX
       setCapituloSelecionado(prev => {
@@ -147,6 +165,7 @@ E acredite: com consistência e paciência, mesmo pequenos aportes mensais têm 
       id: '2',
       titulo: 'Ativos vs. Passivos',
       descricao: 'Entenda a diferença entre ativos e passivos e como fazer seu dinheiro trabalhar para você',
+      temConteudoLatex: true, // Adicionada flag para habilitar visualização avançada
       conteudo: `# ATIVOS X PASSIVOS: SEU DINHEIRO TRABALHANDO PARA VOCÊ
 
 Ativo financeiro é tudo aquilo que representa valor e tem o potencial de colocar mais dinheiro no seu bolso — sem você precisar trabalhar ativamente por isso. É basicamente um contrato que promete te trazer benefícios econômicos no futuro.
@@ -201,6 +220,7 @@ O termo "fixa"não significa que o rendimento será sempre o mesmo, mas sim que 
       id: '3',
       titulo: 'Fundos de Investimento',
       descricao: 'Como funcionam os fundos e como investir em conjunto para diversificar',
+      temConteudoLatex: true, // Adicionada flag para habilitar visualização avançada
       conteudo: `# FUNDOS DE INVESTIMENTO: INVESTINDO EM CONJUNTO
 
 ## O QUE SÃO FUNDOS DE INVESTIMENTO?
@@ -266,6 +286,7 @@ Lembre-se: rentabilidade passada não é garantia de rentabilidade futura. O his
       id: '4',
       titulo: 'Impostos sobre Investimentos',
       descricao: 'Entenda como funcionam os impostos e como otimizar seus resultados',
+      temConteudoLatex: true, // Adicionada flag para habilitar visualização avançada
       conteudo: `# IMPOSTOS SOBRE INVESTIMENTOS: OTIMIZANDO RESULTADOS
 
 ## IMPOSTO DE RENDA NA RENDA FIXA E FUNDOS
@@ -305,6 +326,7 @@ O IOF incide sobre investimentos de renda fixa resgatados antes de 30 dias:
       id: '5',
       titulo: 'Perfil do Investidor',
       descricao: 'Autoconhecimento para tomar decisões melhores de investimento',
+      temConteudoLatex: true, // Adicionada flag para habilitar visualização avançada
       conteudo: `# PERFIL DO INVESTIDOR: AUTOCONHECIMENTO PARA DECISÕES MELHORES
 
 ## POR QUE CONHECER SEU PERFIL É IMPORTANTE
@@ -405,6 +427,7 @@ Quando esses três pontos se alinham prazo, objetivo, e psicológico a jornada s
       id: '6',
       titulo: 'Colocando Tudo em Prática',
       descricao: 'Dicas práticas para começar sua jornada de investimentos',
+      temConteudoLatex: true, // Adicionada flag para habilitar visualização avançada
       conteudo: `# CONCLUSÃO: COLOCANDO TUDO EM PRÁTICA
 
 ## OS PILARES DA JORNADA DO INVESTIDOR
@@ -483,7 +506,12 @@ Boa sorte em sua jornada financeira!`,
           <TouchableOpacity 
             key={capitulo.id}
             style={styles.chapterCard}
-            onPress={() => setCapituloSelecionado(capitulo)}
+            onPress={() => {
+              // Resetar para visualização avançada por padrão
+              setForcarVisualizacaoPadrao(false);
+              setCapituloSelecionado(capitulo);
+            }}
+            testID={`capitulo-${capitulo.id}`}
           >
             <View style={styles.chapterIconContainer}>
               <FontAwesome name={capitulo.icone} size={28} color="#2E7D32" />
@@ -518,7 +546,12 @@ Boa sorte em sua jornada financeira!`,
               <View style={styles.modalHeader}>
                 <TouchableOpacity 
                   style={styles.closeButton}
-                  onPress={() => setCapituloSelecionado(null)}
+                  onPress={() => {
+                    // Resetar para visualização avançada por padrão
+                    setForcarVisualizacaoPadrao(false);
+                    setCapituloSelecionado(null);
+                  }}
+                  testID="botao-fechar"
                 >
                   <FontAwesome name="arrow-left" size={24} color="#333" />
                 </TouchableOpacity>
@@ -529,19 +562,24 @@ Boa sorte em sua jornada financeira!`,
                     style={styles.viewToggleButton}
                     onPress={() => {
                       if (capituloSelecionado.conteudoLatex) {
-                        // Remover conteúdo LaTeX para voltar à visualização padrão
+                        // Ativa visualização padrão
+                        setForcarVisualizacaoPadrao(true);
                         setCapituloSelecionado(prev => {
                           if (prev) {
-                            const { conteudoLatex, ...rest } = prev;
-                            return rest;
+                            return {
+                              ...prev,
+                              conteudoLatex: undefined
+                            };
                           }
                           return prev;
                         });
                       } else {
-                        // Carregar conteúdo LaTeX para visualização avançada
+                        // Ativa visualização avançada
+                        setForcarVisualizacaoPadrao(false);
                         carregarConteudoLatex(capituloSelecionado.id);
                       }
                     }}
+                    testID="botao-alternar-visualizacao"
                   >
                     <FontAwesome 
                       name={capituloSelecionado.conteudoLatex ? "file-text-o" : "file-code-o"} 
@@ -549,7 +587,7 @@ Boa sorte em sua jornada financeira!`,
                       color="#333" 
                     />
                     <Text style={styles.viewToggleText}>
-                      {capituloSelecionado.conteudoLatex ? "Visualização Padrão" : "Visualização Avançada"}
+                      {capituloSelecionado.conteudoLatex ? "Visualização Simplificada" : "Visualização Avançada"}
                     </Text>
                   </TouchableOpacity>
                 )}
@@ -565,7 +603,25 @@ Boa sorte em sua jornada financeira!`,
                   <View style={styles.errorContainer}>
                     <FontAwesome name="exclamation-circle" size={24} color="#C62828" />
                     <Text style={styles.errorText}>{erroLatex}</Text>
-                    <EbookContent content={capituloSelecionado.conteudo} style={styles.contentContainer} />
+                    <TouchableOpacity
+                      style={styles.retryButton}
+                      onPress={() => {
+                        setErroLatex(null);
+                        carregarConteudoLatex(capituloSelecionado.id);
+                      }}
+                    >
+                      <Text style={styles.retryButtonText}>Tentar novamente</Text>
+                    </TouchableOpacity>
+                    <View style={styles.statusContainer}>
+                      <Text style={styles.statusText}>
+                        Status: Usando visualização aprimorada com processamento automático de LaTeX
+                      </Text>
+                    </View>
+                    {/* Usar componente de fallback que processa o conteúdo LaTeX */}
+                    <FixedContentView 
+                      content={capituloSelecionado.conteudoLatex || processarCapituloJson(capituloSelecionado.id, capitulosLatex[capituloSelecionado.id])} 
+                      style={styles.contentContainer} 
+                    />
                   </View>
                 ) : capituloSelecionado.conteudoLatex ? (
                   // Usar o componente aprimorado quando o conteúdo LaTeX estiver disponível
@@ -759,5 +815,47 @@ const styles = StyleSheet.create({
     color: '#C62828',
     marginTop: 8,
     marginBottom: 15,
+  },
+  retryButton: {
+    padding: 10,
+    marginBottom: 15,
+    backgroundColor: '#2E7D32',
+    borderRadius: 5,
+    alignSelf: 'center',
+  },
+  retryButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  statusContainer: {
+    marginBottom: 15,
+    padding: 10,
+    backgroundColor: '#FFF8E1',
+    borderRadius: 5,
+    borderLeftWidth: 4,
+    borderLeftColor: '#FFA000',
+  },
+  statusText: {
+    color: '#333',
+    fontSize: 14,
+  },
+  // Estilos para dica de visualização avançada
+  tipContainer: {
+    flexDirection: 'row',
+    backgroundColor: '#FFF8E1',
+    padding: 12,
+    borderRadius: 8,
+    marginHorizontal: 15,
+    marginBottom: 10,
+    alignItems: 'center',
+  },
+  tipIcon: {
+    marginRight: 10,
+  },
+  tipText: {
+    flex: 1,
+    fontSize: 14,
+    color: '#5D4037',
+    lineHeight: 20,
   },
 });

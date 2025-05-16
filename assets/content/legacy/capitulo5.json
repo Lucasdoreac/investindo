@@ -1,0 +1,353 @@
+[
+  {
+    "type": "section",
+    "title": "Perfil do Investidor: Autoconhecimento Para Decisões Melhores",
+    "level": 1,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "Evita decisões emocionais em momentos de turbulência",
+      "Consegue manter-se fiel à estratégia no longo prazo",
+      "Reduz a ansiedade e insegurança com os investimentos",
+      "Tem maior probabilidade de atingir seus objetivos financeiros\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Por que Conhecer seu Perfil é Importante",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent Conhecer seu perfil de investidor não é apenas uma formalidade bancária, mas um exercício de autoconhecimento que pode ser decisivo para o sucesso da sua estratégia financeira.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.3cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent Quando você investe conforme seu perfil:",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "title": "Os Três Pilares do Perfil do Investidor",
+    "level": 2,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Baixa tolerância:} Você sente desconforto significativo ao ver seu patrimônio reduzido, mesmo temporariamente.",
+      "\\textbf{Média tolerância:} Você aceita alguma volatilidade, desde que veja potencial de ganho.",
+      "\\textbf{Alta tolerância:} Você consegue manter a calma mesmo diante de oscilações relevantes.\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Tolerância ao Risco",
+    "level": 3,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent É a sua capacidade emocional de lidar com perdas temporárias sem tomar decisões precipitadas.",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Curto prazo:} Menos de 2 anos",
+      "\\textbf{Médio prazo:} De 2 a 5 anos",
+      "\\textbf{Longo prazo:} Mais de 5 anos\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Horizonte de Tempo",
+    "level": 3,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent É o prazo que você tem disponível até precisar utilizar os recursos investidos.",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Preservação de capital:} Proteger o patrimônio já conquistado",
+      "\\textbf{Renda:} Gerar recursos para complementar seu orçamento",
+      "\\textbf{Crescimento:} Aumentar seu patrimônio no longo prazo\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Objetivos Financeiros",
+    "level": 3,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent São as finalidades específicas para as quais você está investindo.",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "title": "Os Três Perfis Clássicos",
+    "level": 2,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Prioridade:} Segurança, preservação do patrimônio",
+      "\\textbf{Comportamento:} Prefere evitar riscos, mesmo que isso signifique rentabilidade mais baixa",
+      "\\textbf{Indicado para:} Reserva de emergência, objetivos de curto prazo, pessoas próximas à aposentadoria",
+      "\\textbf{Alocação típica:} 80-100\\% em renda fixa de baixo risco, 0-20\\% em investimentos moderados\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Perfil Conservador",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Prioridade:} Equilíbrio entre segurança e rentabilidade",
+      "\\textbf{Comportamento:} Aceita correr alguns riscos calculados em busca de melhores retornos",
+      "\\textbf{Indicado para:} Objetivos de médio prazo, pessoas com alguma experiência em investimentos",
+      "\\textbf{Alocação típica:} 50-70\\% em renda fixa, 30-50\\% em renda variável diversificada\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Perfil Moderado",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Prioridade:} Maximização dos retornos no longo prazo",
+      "\\textbf{Comportamento:} Tolera alta volatilidade em busca de ganhos acima da média",
+      "\\textbf{Indicado para:} Objetivos de longo prazo, pessoas jovens e com conhecimento do mercado",
+      "\\textbf{Alocação típica:} 20-40\\% em renda fixa, 60-80\\% em renda variável\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Perfil Arrojado",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Baixo risco + Alta rentabilidade + Curto prazo} = Impossível!\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Quer segurança e alta rentabilidade?} Precisará de mais tempo (longo prazo).",
+      "\\textbf{Quer segurança em curto prazo?} Precisará aceitar menor rentabilidade.",
+      "\\textbf{Quer alta rentabilidade em curto prazo?} Precisará assumir mais riscos.\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "table",
+    "headers": [
+      "\\textbf{Objetivo}",
+      "\\textbf{Você ganha}",
+      "\\textbf{Você perde}"
+    ],
+    "rows": [
+      [
+        "Segurança + Liquidez",
+        "Tranquilidade",
+        "Rentabilidade"
+      ],
+      [
+        "Segurança + Rentabilidade",
+        "Crescimento estável",
+        "Liquidez"
+      ],
+      [
+        "Liquidez + Rentabilidade",
+        "Agilidade",
+        "Segurança"
+      ]
+    ],
+    "caption": null
+  },
+  {
+    "type": "highlight",
+    "content": "\\textbf{Observação importante:} Mesmo que você tenha um perfil arrojado, isso não significa que pode tomar grandes riscos com objetivos de curto prazo. No curto prazo, o tempo não está do seu lado — e a volatilidade pode te prejudicar.\\\\",
+    "style": "important"
+  },
+  {
+    "type": "section",
+    "title": "A Trindade Impossível Aplicada ao Perfil",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent Assim como existe uma trindade impossível nos investimentos (segurança, liquidez e rentabilidade), há uma trindade impossível no perfil do investidor:",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.3cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent Para cada objetivo, você precisará ajustar pelo menos uma dessas variáveis:",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\begin{center}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0,3cm} % ou -3cm, teste conforme a necessidade",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\begin{center}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "Por outro lado, o longo prazo permite maior exposição a ativos de risco (como ações), mesmo para investidores mais conservadores, desde que o psicológico esteja preparado para lidar com oscilações.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "}}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{minipage}}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Seu perfil psicológico:} Como você reage emocionalmente a perdas.",
+      "\\textbf{Seu horizonte de tempo:} Quando você precisará do dinheiro.",
+      "\\textbf{Seus objetivos financeiros:} O que você quer conquistar.\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "highlight",
+    "content": "\\textbf{Regra prática importante:} No mundo dos investimentos, o prazo fala  mas o emocional grita. Mesmo que você tenha um objetivo de longo prazo, se não tolera oscilações no caminho, talvez precise montar uma estratégia mais conservadora.",
+    "style": "important"
+  },
+  {
+    "type": "section",
+    "title": "Alinhando Perfil, Horizonte e Psicologia",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent O segredo para investir com tranquilidade está em alinhar:",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.3cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.5cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\begin{center}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "Da mesma forma que não adianta ser arrojado com dinheiro que você vai precisar daqui a 6 meses, também não faz sentido investir agressivamente para o longo prazo se você não aguenta ver sua carteira desvalorizar temporariamente.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\textbf{O equilíbrio ideal está entre o tempo que você tem e o emocional que você suporta.} Estratégia boa é aquela que você consegue manter com consistência, sem surtar nas quedas e sem sair do plano na primeira alta.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{minipage}}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.3cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent O tempo é um dos maiores aliados do investidor, mas ele não faz milagres sozinho. Para colher bons frutos lá na frente, é preciso que os investimentos escolhidos estejam em sintonia com dois pilares: \\textbf{seus objetivos financeiros} e \\textbf{o seu perfil emocional}.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.3cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent Quando esses três pontos se alinham prazo, objetivo, e psicológico a jornada se torna mais leve, sustentável e, principalmente, eficiente.",
+        "style": {}
+      }
+    ]
+  }
+]

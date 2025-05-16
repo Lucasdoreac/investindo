@@ -1,0 +1,78 @@
+[
+  {
+    "type": "section",
+    "title": "Impostos sobre Investimentos: Otimizando Resultados",
+    "level": 1,
+    "content": [
+      {
+        "type": "section",
+        "title": "Imposto de Renda na Renda Fixa e Fundos",
+        "level": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Na maioria dos investimentos em renda fixa e fundos, o IR incide apenas sobre o rendimento (ganho de capital), seguindo a tabela regressiva:",
+            "style": {}
+          },
+          {
+            "type": "table",
+            "headers": ["Prazo de Aplicação", "Alíquota de IR"],
+            "rows": [
+              ["Até 180 dias", "22,5%"],
+              ["De 181 a 360 dias", "20%"],
+              ["De 361 a 720 dias", "17,5%"],
+              ["Acima de 720 dias", "15%"]
+            ],
+            "caption": null
+          },
+          {
+            "type": "text",
+            "content": "Exemplo: Se você aplicou R\\$ 1.000 e resgatou R\\$ 1.100 após 1 ano, seu rendimento foi de R\\$ 100. A alíquota de IR será de 20%, ou seja, R\\$ 20 de imposto. Seu ganho líquido será de R\\$ 80.",
+            "style": {}
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "IOF (Imposto sobre Operações Financeiras)",
+        "level": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "O IOF incide sobre investimentos de renda fixa resgatados antes de 30 dias:",
+            "style": {}
+          },
+          {
+            "type": "list",
+            "items": [
+              "A alíquota diminui a cada dia, partindo de 96% (1º dia) até 0% (30º dia).",
+              "Incide apenas sobre o rendimento, não sobre o capital.",
+              "Em fundos, o IOF só é cobrado para resgates feitos em menos de 30 dias.\n\\end{itemize}"
+            ],
+            "ordered": false
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Resumo prático",
+        "level": 2,
+        "content": [
+          {
+            "type": "table",
+            "headers": ["Investimento", "IR", "IOF"],
+            "rows": [
+              ["LCI / LCA", "Isento", "Isento (carência mínima > 30 dias)"],
+              ["CRI / CRA", "Isento", "Isento (carência mínima > 30 dias)"],
+              ["Debênture Incentivada", "Isento", "Isento (vencimento normalmente longo)"],
+              ["Poupança", "Isento", "Isento"],
+              ["FII (rendimentos)", "Isento", "Não se aplica"],
+              ["Fundos de Ações", "15%", "Isento"]
+            ],
+            "caption": "Impostos aplicáveis aos principais tipos de investimentos"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,181 @@
+[
+  {
+    "type": "section",
+    "title": "Fundos de Investimento: Investindo em Conjunto",
+    "level": 1,
+    "content": []
+  },
+  {
+    "type": "section",
+    "title": "O que são Fundos de Investimento?",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent Os fundos de investimento funcionam como uma espécie de \"condomínio financeiro\", onde diversos investidores reúnem seus recursos para investir coletivamente. Esse dinheiro é gerido por um profissional especializado, que toma as decisões de compra e venda de ativos conforme os objetivos estabelecidos no regulamento do fundo.",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0.3cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent A grande vantagem desse modelo é permitir que pequenos investidores tenham acesso a estratégias, mercados e ativos que seriam inviáveis individualmente, seja pelo volume mínimo exigido, pela complexidade da gestão ou pela necessidade de diversificação.",
+        "style": {}
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "title": "Principais Tipos de Fundos",
+    "level": 2,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Fundos DI:} Investem quase que exclusivamente em títulos pós-fixados atrelados ao CDI. São os mais conservadores e previsíveis.",
+      "\\textbf{Fundos de Renda Fixa:} Aplicam no mínimo 80\\% do patrimônio em ativos de renda fixa, podendo incluir títulos prefixados, pós-fixados e indexados à inflação.\n    \n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Fundos DI e Renda Fixa",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "Podem investir em diferentes mercados (renda fixa, ações, câmbio, derivativos) com maior flexibilidade.",
+      "Existem desde os mais conservadores até os mais arrojados, dependendo da estratégia.",
+      "Sua classificação varia conforme a estratégia: macro, long \\& short, arbitragem, entre outros.\n   \n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Fundos Multimercado",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "Investem no mínimo 67\\% do patrimônio em ações.",
+      "Maior potencial de retorno e também maior volatilidade.",
+      "Podem ser ativos (buscam superar um índice) ou passivos (apenas replicam um índice).\n    .\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Fundos de Ações",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "Investem em empreendimentos imobiliários, como shoppings, galpões logísticos, edifícios corporativos ou títulos ligados ao setor.",
+      "Distribuem rendimentos mensais, geralmente isentos de IR para pessoa física.",
+      "São negociados em bolsa, como ações.\n    \n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Fundos Imobiliários (FIIs)",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "Fundos negociados em bolsa que buscam replicar o desempenho de um índice de referência.",
+      "Combinam a diversificação dos fundos com a liquidez das ações.",
+      "Geralmente têm taxas de administração mais baixas que fundos tradicionais.\n    \n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "ETFs (Exchange Traded Funds)",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "section",
+    "title": "Vantagens e Desvantagens",
+    "level": 2,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Gestão profissional:} Especialistas tomam decisões baseadas em pesquisas e análises.",
+      "\\textbf{Diversificação:} Mesmo com pouco dinheiro, você consegue diversificar seus investimentos.",
+      "\\textbf{Acesso:} Permitem investir em ativos que exigiriam valores altos individualmente.",
+      "\\textbf{Praticidade:} Você não precisa acompanhar o mercado diariamente.\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Vantagens",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Taxas:} A maioria cobra taxa de administração, e alguns também cobram taxa de performance.",
+      "\\textbf{Tributação:} O come-cotas antecipa 15\\% ou 20\\% do IR a cada semestre (maio e novembro).",
+      "\\textbf{Falta de controle:} Você não decide diretamente quais ativos comprar ou vender.",
+      "\\textbf{Rentabilidade:} Nem sempre superam os índices de referência do mercado.\n\\end{itemize}"
+    ],
+    "ordered": false
+  },
+  {
+    "type": "section",
+    "title": "Desvantagens",
+    "level": 3,
+    "content": []
+  },
+  {
+    "type": "list",
+    "items": [
+      "\\textbf{Seu perfil e objetivos:} O fundo deve estar alinhado com seu perfil de risco e horizonte de investimento.",
+      "\\textbf{Histórico de rentabilidade:} Compare o desempenho com fundos similares e com o benchmark.",
+      "\\textbf{Taxas:} Avalie se as taxas cobradas são compatíveis com a rentabilidade entregue.",
+      "\\textbf{Gestora:} Pesquise a reputação e experiência da gestora no mercado.",
+      "\\textbf{Patrimônio e liquidez:} Fundos muito pequenos podem ter dificuldades operacionais ou encerrar atividades.\n\\end{enumerate}"
+    ],
+    "ordered": true
+  },
+  {
+    "type": "section",
+    "title": "Como Escolher um Fundo",
+    "level": 2,
+    "content": [
+      {
+        "type": "text",
+        "content": "\\noindent Ao selecionar um fundo, considere:",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\vspace{0 cm}",
+        "style": {}
+      },
+      {
+        "type": "text",
+        "content": "\\noindent Lembre-se: rentabilidade passada não é garantia de rentabilidade futura. O histórico serve apenas como referência, nunca como promessa.",
+        "style": {}
+      }
+    ]
+  }
+]
